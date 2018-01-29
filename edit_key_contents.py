@@ -1,5 +1,4 @@
 import _winreg
-
 #variables to open the desired reg key.
 reg_parent = _winreg.HKEY_LOCAL_MACHINE
 string_var = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\policies\\system"
@@ -15,7 +14,6 @@ key_value = 0x00000001 #type in hex, dword requires hex types.
 x = _winreg.OpenKeyEx(reg_parent, string_var, 0, _winreg.KEY_ALL_ACCESS)
 #0 after key_name here has to be passed in.
 y = _winreg.SetValueEx(x, key_name,0,key_type,key_value)
-
 
 #remember to close key
 x = _winreg.CloseKey(x)
